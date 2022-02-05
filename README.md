@@ -5,7 +5,7 @@ Based on [integrate the container with conda](https://github.com/grst/rstudio-se
 
 ### Why this repo?
 
-- We want to use rstudio interactively on RCC just like on our local computers. e.g. easy access to files on server, user-friendly UI.
+- We want to use rstudio interactively on RCC just like on our local computers. e.g. easy access to files on server, draw and check plots easily, upload and download files within rstudio, user-friendly UI.
 
 - One way provided is through ThinLinc. But ThinLinc sometimes is slow; hard to copy-paste; not good UI, etc.
 
