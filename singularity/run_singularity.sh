@@ -12,11 +12,12 @@
 
 # Main parameters for the script with default values
 IP=$(/sbin/ip route get 8.8.8.8 | awk '{print $NF;exit}')
-PORT=8787
+readonly PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
 echo "Open RStudio Server at http://${IP}:${PORT}"
 
 USER=$(whoami)
 USER_psw=123
+#USER_psw=$(openssl rand -base64 15)
 CONDA_PREFIX="/scratch/midway2/${USER}/conda_env/rstudio-server"
 TMPDIR=${TMPDIR:-tmp}
 
@@ -51,11 +52,12 @@ END
 
 chmod +x ${RSTUDIO_TMP}/rsession.sh
 
+export SINGULARITYENV_RSTUDIO_SESSION_TIMEOUT=0
+
 export SINGULARITYENV_USER=${USER}
 export SINGULARITYENV_PASSWORD=${USER_psw}
 export SINGULARITYENV_RSTUDIO_WHICH_R=${R_BIN}
 export SINGULARITYENV_CONDA_PREFIX=${CONDA_PREFIX}
-export SINGULARITYENV_USER=${USER}
 export SINGULARITY_CACHEDIR=/scratch/midway2/${USER}/.singularity
 
 cat 1>&2 <<END
@@ -93,9 +95,9 @@ END
     --bind /project2:/project2 \
     --bind /scratch/midway2/${USER}:/scratch/midway2/${USER} \
     ${CONTAINER} rserver  \
-    --rsession-which-r=${R_BIN} \
     --www-address=${IP} \
     --www-port=${PORT} \
+    --rsession-which-r=${R_BIN} \
     --server-user ${USER} \
     --auth-none=0 \
     --auth-pam-helper-path=pam-helper \
