@@ -69,7 +69,7 @@ There are two places to run rstudio server. One is on login node, the other is o
 
   Use the info highlighted in blue rectangle.
   
-  - `ssh -N -L ...` in your terminal.
+  - `ssh -N -L ...` in your local terminal.
   -  Open the link in your browser.
   
 
