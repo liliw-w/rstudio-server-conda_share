@@ -37,13 +37,15 @@ To make it work for your own use, several parameters needed to modify. All modif
 
 2. Speficy the path to the rstudio singularity container to parameter `$CONTAINER`.
 
-  - Download the container by `singularity pull docker://rocker/rstudio_latest`. See [here](https://www.rocker-project.org/use/singularity/) for the container's info.
+  - Download the container by `singularity pull docker://rocker/rstudio:latest` to get the latest version. See [here](https://www.rocker-project.org/use/singularity/) for the container's info.
   
   - Move the downloaded file `rstudio_latest.sif` to the path you assigned to `$CONTAINER`. I would recommend `singularity/rstudio_latest.sif`.
 
 3. Set your login password to parameter `$USER_psw`.
 
 #### Run
+
+There are two places to run rstudio server. One is on login node, the other is on on computation node by submitting a SLURM job. I give below how to run in two ways. I would recommend running jobs on computation node as in way 2.
 
 1. Run this container on login node.
 
@@ -71,9 +73,9 @@ To make it work for your own use, several parameters needed to modify. All modif
   -  Open the link in your browser.
   
 
-### Ref
+### Ref and thanks to
 
-To understand more how this works, see ref below:
+To understand more about how this works, see ref below:
 
 - [rstudio server singularity container](https://www.rocker-project.org/use/singularity/)
 
@@ -81,3 +83,4 @@ To understand more how this works, see ref below:
 
 - [integrate the container with conda](https://github.com/grst/rstudio-server-conda)
 
+- Also thanks to Pheonix Mu and Chao Dai for sharing their settings.
