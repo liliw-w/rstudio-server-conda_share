@@ -22,7 +22,7 @@ CONDA_PREFIX="/scratch/midway2/${USER}/conda_env/rstudio-server"
 TMPDIR=${TMPDIR:-tmp}
 
 # singularity pull docker://rocker/rstudio_latest
-dir_repo="/scratch/midway2/${USER}/rstudio-server-conda"
+dir_repo="/scratch/midway2/${USER}/rstudio-server-conda_share"
 CONTAINER="${dir_repo}/singularity/rstudio_latest.sif"
 
 
