@@ -27,6 +27,10 @@ Therefore, we need another way to be able to launch rstudio on RCC.
 
 ... to your RCC folder. I store it in my `scratch` space.
 
+#### Load singularity
+
+`module load singularity`
+
 #### Modify a few parameters
 
 To make it work for your own use, several parameters needed to modify. All modifications will be made in file `singularity/run_singularity.sh`.
