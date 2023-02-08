@@ -49,7 +49,7 @@ To make it work for your own use, several parameters needed to modify. All modif
 
 #### 4. Run
 
-There are two places to run rstudio server. One is on login node, the other is on on computation node by submitting a SLURM job. I give below how to run in two ways. I would recommend running jobs on computation node as in way 1.
+There are two ways to run rstudio server. One is on login node, the other is on on computation node by submitting a SLURM job. I give below how to run in two ways. I would recommend running jobs on computation node as in way 1.
 
 
 1. Run studio on computation node.
