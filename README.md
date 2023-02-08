@@ -49,32 +49,35 @@ To make it work for your own use, several parameters needed to modify. All modif
 
 #### 4. Run
 
-There are two places to run rstudio server. One is on login node, the other is on on computation node by submitting a SLURM job. I give below how to run in two ways. I would recommend running jobs on computation node as in way 2.
+There are two places to run rstudio server. One is on login node, the other is on on computation node by submitting a SLURM job. I give below how to run in two ways. I would recommend running jobs on computation node as in way 1.
 
-1. Run this container on login node.
 
-- `bash /path/to/your_repo/singularity/run_singularity.sh`
-
-- You will see something like highlighted in orange rectangle,
-
-![](rstudio_contaner_login.png)
-
-- Open the link in your browser.
-
-  User name and password are in the figure.
-
-2. Run studio on computation node.
+1. Run studio on computation node.
 
 - `sbatch /path/to/your_repo/singularity/run_singularity.sh`
 
   This is to submit a slurm job. Configure the slurm resource parameters in the header of `singularity/run_singularity.sh`.
 
-- Check the slurm output file `rstudio-server.job`. The content is basically the same as the above figure.
+- Check the slurm output file `rstudio-server.job`. The content is basically the same as the following figure.
 
   Use the info highlighted in blue rectangle.
   
   - `ssh -N -L ...` in your local terminal.
   -  Open the link in your browser.
+
+![](rstudio_contaner_login.png)
+
+
+2. Run this container on login node.
+
+- `bash /path/to/your_repo/singularity/run_singularity.sh`
+
+- You will see something like highlighted by orange rectangle in the above figure,
+
+- Open the link in your browser.
+
+  User name and password are in the figure.
+
   
 
 ### Ref and thanks to
