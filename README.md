@@ -23,15 +23,15 @@ Therefore, we need another way to be able to launch rstudio on RCC.
 
 ### How to use this repo?
 
-#### Git clone this repo
+#### 1. Git clone this repo
 
 ... to your RCC folder. I store it in my `scratch` space.
 
-#### Load singularity
+#### 2. Load singularity
 
 `module load singularity`
 
-#### Modify a few parameters
+#### 3. Modify a few parameters
 
 To make it work for your own use, several parameters needed to modify. All modifications will be made in file `singularity/run_singularity.sh`.
 
@@ -47,7 +47,7 @@ To make it work for your own use, several parameters needed to modify. All modif
 
 3. Set your login password to parameter `$USER_psw`.
 
-#### Run
+#### 4. Run
 
 There are two places to run rstudio server. One is on login node, the other is on on computation node by submitting a SLURM job. I give below how to run in two ways. I would recommend running jobs on computation node as in way 2.
 
